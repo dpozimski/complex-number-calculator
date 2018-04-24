@@ -4,15 +4,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.dpozimski.complex_number_calculator.MainActivity"
+    android:background="@color/colorPrimaryDark"
+    tools:layout_editor_absoluteY="81dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/grapView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="7dp"
+        android:foregroundTint="@color/text"
+        app:layout_constraintBottom_toTopOf="@+id/btMinus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:seriesColor="@color/colorPrimary" />
+
+    <EditText
+        android:id="@+id/etTextA"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/digitA"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        android:inputType="numberDecimal|numberSigned"
+        app:layout_constraintEnd_toStartOf="@+id/etTextAc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btAdd" />
+
+    <EditText
+        android:id="@+id/etTextAc"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/complexA"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        android:inputType="numberDecimal|numberSigned"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etTextA"
+        app:layout_constraintTop_toBottomOf="@+id/btMinus" />
+
+    <EditText
+        android:id="@+id/etTextB"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/digitB"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        android:inputType="numberDecimal|numberSigned"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/etTextBc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTextA"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/etTextBc"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/complexB"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        android:inputType="numberDecimal|numberSigned"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etTextB"
+        app:layout_constraintTop_toBottomOf="@+id/etTextAc"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btAdd"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/add"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/btMinus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grapView" />
+
+    <Button
+        android:id="@+id/btMinus"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="131dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/minus"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/text"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btAdd"
+        app:layout_constraintTop_toBottomOf="@+id/grapView" />
+
 
 </android.support.constraint.ConstraintLayout>
